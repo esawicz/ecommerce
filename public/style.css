@@ -1,0 +1,22 @@
+body {
+	height: 100%;
+}
+
+.homepicture {
+	background-image: url('./images/candy-hearts-pink-white_1.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	padding-top: 100px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+ header {
+ 	position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: white;
+ }

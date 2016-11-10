@@ -5,8 +5,9 @@ var massive = require('massive');
 var port = 8005;
 var cors = require('cors');
 var corsOptions = {
-    origin: 'http://localhost:8555'
+    origin: 'http://localhost:8005'
 };
+
 
 var secret = require('./config.js');
 var connectionString = 'postgres://ellensawicz@localhost/ellensawicz';
@@ -20,13 +21,18 @@ app.use(session({
 	saveUninitialized: true
 }));
 
+app.use(express.static(__dirname + '/public'));
+
 var massiveInstance = massive.connectSync({connectionString : connectionString});
 app.set('db', massiveInstance);
 var db = app.get('db');
-console.log('this is db', db)
+//console.log('this is db', db)
 
+var controller = require('./controller');
 
+app.get('/api/products', controller.getAll);
 
+app.post('/api/cart', controller.createCart);
 
 
 

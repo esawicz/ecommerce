@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app='pink'>
+<head>
+	<title>Kitchen Dreaming</title>
+</head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+<body>
+	<header>
+		<a ui-sref='products'>go shopping</a>
+		<div>login</div>
+		<div>cart</div>
+	</header>
+
+<ui-view></ui-view>
+
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+
+ <script src='app.js'></script>
+ <script src='js/services/mainSrv.js'></script>
+ <script src='js/mainCtrl.js'></script>
+ <script src='js/productCtrl.js'></script>
+ 
+
+
+</body>
+</html>

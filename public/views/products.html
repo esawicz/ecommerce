@@ -1,0 +1,14 @@
+<h1>Products</h1>
+
+<div>ALL THE THINGS</div>
+
+<div class="container">
+
+<div class="eachOne" ng-repeat='product in products'>
+	<h2>{{product.item_name}}</h2>
+	<img src='../images/{{product.image_url}}'>
+	<p> Price: ${{product.price}} </p>
+	<button ng-click="addToCart(product)">I need it!</button>
+
+</div>
+
