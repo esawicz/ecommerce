@@ -12,4 +12,13 @@ angular.module('pink')
 
 	$scope.getProducts();
 
+	$scope.addToCart = function(item) {
+			mainSrv.createCart(item).then(function(response){
+				console.log(response)
+				return response.data
+			})
+		}
+
+
+
 })

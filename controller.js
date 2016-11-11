@@ -9,12 +9,22 @@ module.exports = {
 		})
 	},
 
-	createCart: function(req,res){
+	createCart: function(req, res) {
 		if(!req.session.cart) {
 			req.session.cart = []
 		}
 		req.session.cart.push(req.body)
+		res.send(req.session.cart);
 	},
 
+	deleteItem: function(req, res) {
+		req.session.cart.forEach(function (item, index) {
+			if (item.product_id === req.body.product_id) {
+				req.sesssion.cart.splice(index, 1);
+			}
+		})
+
+		res.send(req.session.cart);
+	}
 
 }

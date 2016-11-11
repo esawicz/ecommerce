@@ -1,6 +1,6 @@
 angular.module('pink').service('mainSrv', function($http){
 	
-	this.getProducts = function(){
+	this.getProducts = function() {
 		return $http({
 			method: 'GET',
 			url: '/api/products',
@@ -10,11 +10,19 @@ angular.module('pink').service('mainSrv', function($http){
 		});
 	},
 
-	this.createCart= function(item){
+	this.createCart = function(item) {
 		return $http({
 			method: 'POST',
 			url: '/api/cart',
-			data: req.body
+			data: item
+		});
+	}
+
+	this.deleteItem = function(item) {
+		return $http({
+			method: 'DELETE',
+			url: '/api/cart',
+			data:item
 		});
 	}
 

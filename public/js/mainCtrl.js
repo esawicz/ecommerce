@@ -3,10 +3,10 @@ angular.module('pink')
 
 	
 	
-		// $scope.addToCart() =function(req, res){
-		// 	mainSrv.createCart(item).then(function(response){
-		// 		return response
-		// 	})
-		// }
+		$scope.addToCart() =function(req, res){
+			mainSrv.createCart(item).then(function(response){
+				return response.data
+			})
+		}
 
 })

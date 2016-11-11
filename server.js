@@ -16,9 +16,7 @@ var app = module.exports = express();
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
 app.use(session({ 
-	secret: secret.secret,
-	resave: true,
-	saveUninitialized: true
+	secret: secret.secret
 }));
 
 app.use(express.static(__dirname + '/public'));
@@ -34,6 +32,7 @@ app.get('/api/products', controller.getAll);
 
 app.post('/api/cart', controller.createCart);
 
+app.delete('/api/cart', controller.deleteItem);
 
 
 app.listen(port, function(){
