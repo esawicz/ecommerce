@@ -7,7 +7,9 @@
 		<button ng-click='increaseQuantity(product)'> + </button>
 		<button ng-click='decreaseQuantity(product)' ng-disabled="product.quantity <= 1"> - </button>
 		<button ng-click='clearItem(product)'>No thanks!</button>
-
 	</div>
 
+	<div>subtotal: {{subTotal}}<div>
+		<div>tax: {{tax}}</div>
+		<div>total: {{total}}</div>
 </div>
