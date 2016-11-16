@@ -12,7 +12,21 @@ angular.module('pink', ['ui.router'])
 	.state('products', {
 		url: '/products',
 		templateUrl: '/views/products.html',
-		controller: 'productCtrl'
+		controller: 'productCtrl',
+		resolve: {
+			products: function (mainSrv) {
+				return mainSrv.getProducts();
+			},
+			cart: function (mainSrv) {
+				return mainSrv.showCart();
+			}
+		}
+	})
+
+	.state('cart', {
+		url: '/cart',
+		templateUrl: '/views/cart.html',
+		controller: 'cartCtrl'
 	})
 
 	$urlRouterProvider.otherwise('/');

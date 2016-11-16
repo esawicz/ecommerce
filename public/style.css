@@ -20,3 +20,7 @@ body {
     z-index: 10;
     background-color: white;
  }
+
+ .container{
+ 	padding-top: 40px;
+ }

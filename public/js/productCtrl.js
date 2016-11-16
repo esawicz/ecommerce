@@ -1,24 +1,25 @@
 angular.module('pink')
-	.controller('productCtrl', function($scope, mainSrv){
+	.controller('productCtrl', function($scope, mainSrv, products, cart){
 
-	$scope.getProducts = function() {
-		mainSrv.getProducts().then(function(response) {
-			console.log('this is response in controller', response)
-			$scope.products = response;
-			console.log("this is $scope.products", $scope.products)
-			return response;
-		})
-	}
-
-	$scope.getProducts();
+		$scope.products = products;
+		$scope.cart = cart;
+		if ($scope.cart) checkIfItemInCart();
 
 	$scope.addToCart = function(item) {
-			mainSrv.createCart(item).then(function(response){
-				console.log(response)
-				return response.data
+	 	item.added = true;
+		mainSrv.createCart(item).then(function(response){
+			$scope.cart = response;
+		});
+	}
+
+	function checkIfItemInCart() {
+		$scope.cart.forEach(function (cartItem) {
+			$scope.products.forEach(function (product) {
+				if (cartItem.product_id === product.product_id) {
+					product.added = true;
+				}
 			})
-		}
-
-
+		})
+	}
 
 })

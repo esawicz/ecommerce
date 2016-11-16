@@ -15,7 +15,7 @@ var connectionString = 'postgres://ellensawicz@localhost/ellensawicz';
 var app = module.exports = express();
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
-app.use(session({ 
+app.use(session({
 	secret: secret.secret
 }));
 
@@ -32,7 +32,11 @@ app.get('/api/products', controller.getAll);
 
 app.post('/api/cart', controller.createCart);
 
-app.delete('/api/cart', controller.deleteItem);
+app.get('/api/cart', controller.showCart);
+
+app.put('/api/cart', controller.updateCartItem);
+
+app.delete('/api/cart/:id', controller.clearItem);
 
 
 app.listen(port, function(){
