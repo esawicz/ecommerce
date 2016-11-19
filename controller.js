@@ -58,6 +58,43 @@ module.exports = {
 				}
 			}
 		res.send(cart);
+	},
+
+	createOrder: function (req, res) {
+		console.log(4444444, req.body)
+		var user = req.body.user;
+		var order = req.body.order;
+		var cart = order.cart;
+
+		var userObj = {
+			first_name: user.firstName,
+			last_name: user.lastName,
+			email: user.email,
+			ship_address_1: user.address1,
+			ship_address_2: user.address2,
+			ship_city: user.shipCity,
+			ship_state: user.shipState,
+			ship_zip: user.zipcode
+		}
+
+		db.customers.insert(userObj, function (err, customer) {
+			// console.log(11111111, err);
+			// console.log(22222222, customer);
+
+			var obj = {
+				customer_id: customer.id,
+				total: order.total
+			}
+
+			db.orders.insert(obj, function (err, order){
+				console.log(3456789, order)
+				cart.forEach(function (product) {
+					db.order_products.insert({order_id: order.id, product_id: product.product_id, quantity: product.quantity})
+				})
+
+			})
+
+		});
 	}
 
 }

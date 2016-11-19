@@ -38,6 +38,8 @@ app.put('/api/cart', controller.updateCartItem);
 
 app.delete('/api/cart/:id', controller.clearItem);
 
+app.post('/api/order', controller.createOrder)
+
 
 app.listen(port, function(){
 	console.log('Listening on ' + port)

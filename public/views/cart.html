@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="eachOne" ng-repeat='product in cart'>
 		<h2>{{product.item_name}}</h2>
-		<img src='../images/{{product.image_url}}'>
+		<img ng-src='../images/{{product.image_url}}'>
 		<p> Price: ${{product.price}} </p>
 		<p>quantity: {{product.quantity}}</p>
 		<button ng-click='increaseQuantity(product)'> + </button>
@@ -12,4 +12,6 @@
 	<div>subtotal: {{subTotal}}<div>
 		<div>tax: {{tax}}</div>
 		<div>total: {{total}}</div>
+	<button ui-sref='products'>keep shopping</button>
+	<button ui-sref='checkout'>checkout</button>
 </div>

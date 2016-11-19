@@ -15,7 +15,7 @@ angular.module('pink', ['ui.router'])
 		controller: 'productCtrl',
 		resolve: {
 			products: function (mainSrv) {
-				return mainSrv.getProducts();
+			return mainSrv.getProducts();
 			},
 			cart: function (mainSrv) {
 				return mainSrv.showCart();
@@ -29,6 +29,19 @@ angular.module('pink', ['ui.router'])
 		controller: 'cartCtrl'
 	})
 
+	.state('checkout', {
+		url: '/checkout',
+		templateUrl: '/views/checkout.html',
+		controller: 'checkoutCtrl'
+	})
+
+	.state('payment', {
+		url: '/payment',
+		templateUrl: '/views/payment.html',
+		controller: 'paymentCtrl'
+	})
+
 	$urlRouterProvider.otherwise('/');
 
 })
+ 

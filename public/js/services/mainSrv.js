@@ -48,4 +48,18 @@ angular.module('pink').service('mainSrv', function($http){
 		});
 	}
 
+  this.placeOrder = function(user, order) {
+		return $http({
+			method: 'POST',
+			url: '/api/order',
+			data: {
+				user: user,
+				order: order
+			}
+		}).then(function(response){
+			return response.data
+		});
+	}
+
+
 })

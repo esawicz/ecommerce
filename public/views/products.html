@@ -5,7 +5,7 @@
 <div class="container">
 	<div class="eachOne" ng-repeat='product in products'>
 		<h2>{{product.item_name}}</h2>
-		<img src='../images/{{product.image_url}}'>
+		<img ng-src='../images/{{product.image_url}}'>
 		<p> Price: ${{product.price}} </p>
 		<button ng-click="addToCart(product)" ng-disabled='product.added'>
 			<p ng-if="product.added">

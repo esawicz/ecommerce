@@ -1,0 +1,2 @@
+-- insert into customers (first_name, last_name, email, ship_address_1, ship_address_2, ship_city, ship_state, ship_zip)
+-- values ($1, $2, $3, $4, $5, $6, $7, $8);
