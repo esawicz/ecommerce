@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="eachOne" ng-repeat='product in cart'>
-		<h2>{{product.item_name}}</h2>
-		<img ng-src='../images/{{product.image_url}}'>
+		<p class='productName'>{{product.item_name}}</>
+		<img ng-src='../images/{{product.image_url}} 'style="height:75px; width:50px">
 		<p> Price: ${{product.price}} </p>
 		<p>quantity: {{product.quantity}}</p>
 		<button ng-click='increaseQuantity(product)'> + </button>
@@ -9,9 +9,9 @@
 		<button ng-click='clearItem(product)'>No thanks!</button>
 	</div>
 
-	<div>subtotal: {{subTotal}}<div>
-		<div>tax: {{tax}}</div>
-		<div>total: {{total}}</div>
+	<div class="total">subtotal: {{subTotal}}<div>
+		<div class="total">tax: {{tax}}</div>
+		<div class="total">total: {{total}}</div>
 	<button ui-sref='products'>keep shopping</button>
 	<button ui-sref='checkout'>checkout</button>
 </div>

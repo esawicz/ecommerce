@@ -1,30 +1,31 @@
 <div class="container">
 	<div class="eachOne" ng-repeat='product in cart'>
 		<h2>{{product.item_name}}</h2>
-		<img src='../images/{{product.image_url}}'>
+		<img src='../images/{{product.image_url}}' style="height:75px; width:50px">
 		<p> Price: ${{product.price}} </p>
 		<p>quantity: {{product.quantity}}</p>
 	</div>
 
-	<div>subtotal: {{subTotal}}<div>
-		<div>tax: {{tax}}</div>
-		<div>total: {{total}}</div>
+	<div class="total">subtotal: {{subTotal}}<div>
+		<div class="total">tax: {{tax}}</div>
+		<div class="total">total: {{total}}</div>
 
 </div>
 
-<div class="form-containter flex">
+<div class="form-container">
   <form>
-    <p>And you are?</p>
+    <p class="name">What's your name, sugar?</p>
     <input type="text" name="First Name" placeholder="First Name" ng-model ="user.firstName">
     <input type="text" name="Last Name" placeholder="Last Name" ng-model="user.lastName">
     <input type="text" name="Email" placeholder="Email" ng-model="user.email"
-    <p>Shipping Address</p>
+	</br>
+    <div>Where should we send your things?</div>
     <input type="text" name="Address 1" placeholder="Address 1" ng-model="user.address1">
     <input type="text" name="Address 2" placeholder="Address 2" ng-model="user.address2">
     <input type="text" name="City" placeholder="City" ng-model="user.shipCity">
     <select name="State" ng-model="user.shipState" ng-options="state for state in states"></select>
     <input type="text" name="Zipcode" placeholder="Zipcode" ng-model="user.zipcode">
-
+	</br>
     <button ng-click='placeOrder(user)'>Continue to payment</button>
     <button ui-sref='cart'>Nevermind, I'm not done</button>
   </form>

@@ -1,11 +1,11 @@
-<h1>Products</h1>
 
-<div>ALL THE THINGS</div>
+<div>
+<div>ALL THE MOST DARLING KITCHEN ACCESSORIES!</div>
 
 <div class="container">
 	<div class="eachOne" ng-repeat='product in products'>
 		<h2>{{product.item_name}}</h2>
-		<img ng-src='../images/{{product.image_url}}'>
+		<img ng-src='../images/{{product.image_url}}' style="height:200px;width:150px">
 		<p> Price: ${{product.price}} </p>
 		<button ng-click="addToCart(product)" ng-disabled='product.added'>
 			<p ng-if="product.added">
@@ -17,5 +17,5 @@
 		</button>
 	</div>
 </div>
-
+</div>
 <button ui-sref='cart'>View Cart</button>

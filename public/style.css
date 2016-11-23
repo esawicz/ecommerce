@@ -13,8 +13,9 @@ body {
 	left: 0;
 	right: 0;
 }
+
  header {
- 	position: fixed;
+ 		position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
@@ -22,5 +23,37 @@ body {
  }
 
  .container{
- 	padding-top: 40px;
+ 	padding-top: 100px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	background-color: #E8F7F2;
  }
+
+.bag {
+	float: right;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+
+}
+
+.title {
+	font-family: cursive;
+	font-size: 85px;
+	font-weight: bold;
+	color: #E8F7F2;
+	text-align: center;
+}
+
+.eachOne {
+	border-style: dotted;
+	border-color: yellow;
+	background-color: white;
+
+}
+
+.total {
+	font-family: cursive;
+	font-style: bold;
+}
