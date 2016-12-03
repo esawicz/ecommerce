@@ -57,3 +57,7 @@ body {
 	font-family: cursive;
 	font-style: bold;
 }
+
+.form-container {
+	padding-top: 60px;
+}

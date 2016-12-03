@@ -26,7 +26,7 @@
     <select name="State" ng-model="user.shipState" ng-options="state for state in states"></select>
     <input type="text" name="Zipcode" placeholder="Zipcode" ng-model="user.zipcode">
 	</br>
-    <button ng-click='placeOrder(user)'>Continue to payment</button>
+    <button ng-click='placeOrder(user)' ui-sref='payment'>Continue to payment</button>
     <button ui-sref='cart'>Nevermind, I'm not done</button>
   </form>
 
