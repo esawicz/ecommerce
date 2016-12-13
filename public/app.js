@@ -41,7 +41,12 @@ angular.module('pink', ['ui.router'])
 		controller: 'paymentCtrl'
 	})
 
+	.state('contact', {
+		url:'/contact',
+		templateUrl: '/views/contact.html',
+		controller: 'contactCtrl'
+	})
+
 	$urlRouterProvider.otherwise('/');
 
 })
- 

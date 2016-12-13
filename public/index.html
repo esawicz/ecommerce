@@ -6,7 +6,11 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 <body>
 	<header>
-		<img src="../images/shopping-bag-icon-5.png" ui-sref='cart' style="height:50px; width:50px" class='bag'>
+		<div><img src="../images/home.png" ui-sref='home' style="height:50px; width:50px"></div>
+		<div>About</div>
+		<div><a ui-sref="products">Products</a></div>
+		<div><a ui-sref="contact">Contact</a></div>
+		<div><img src="../images/shopping-bag-icon-5.png" ui-sref='cart' style="height:50px; width:50px" class='bag'></div>
 	</header>
 
 <ui-view></ui-view>
@@ -23,6 +27,7 @@
  <script src='js/cartCtrl.js'></script>
  <script src='js/checkoutCtrl.js'></script>
  <script src="js/paymentCtrl.js"></script>
+ <script src="js/contactCtrl.js"></script>
 
 
 
